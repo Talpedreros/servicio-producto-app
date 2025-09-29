@@ -1,8 +1,11 @@
 require('dotenv').config();
 const express = require('express');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Servir archivos estáticos desde la carpeta public
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 // Datos de ejemplo
@@ -13,7 +16,7 @@ const calzadoDeportivo = [
     descripcion: 'Zapatillas cómodas para correr y uso diario.',
     marca: 'Nike',
     precio: 120,
-    imagen: 'https://ejemplo.com/airmax.jpg'
+    imagen: '/img/airmax.jpg'
   },
   {
     id: 2,
@@ -21,7 +24,7 @@ const calzadoDeportivo = [
     descripcion: 'Zapatillas de alto rendimiento para running.',
     marca: 'Adidas',
     precio: 140,
-    imagen: 'https://ejemplo.com/ultraboost.jpg'
+    imagen: '/img/ultraboost.jpg'
   },
   {
     id: 3,
@@ -29,7 +32,7 @@ const calzadoDeportivo = [
     descripcion: 'Zapatillas modernas y versátiles.',
     marca: 'Puma',
     precio: 110,
-    imagen: 'https://ejemplo.com/rsx.jpg'
+    imagen: '/img/rsx.jpg'
   },
   {
     id: 4,
@@ -37,7 +40,7 @@ const calzadoDeportivo = [
     descripcion: 'Estilo retro y comodidad para todos los días.',
     marca: 'Reebok',
     precio: 95,
-    imagen: 'https://ejemplo.com/classic.jpg'
+    imagen: '/img/classic.jpg'
   },
   {
     id: 5,
@@ -45,7 +48,7 @@ const calzadoDeportivo = [
     descripcion: 'Diseño clásico y soporte superior.',
     marca: 'New Balance',
     precio: 105,
-    imagen: 'https://ejemplo.com/574.jpg'
+    imagen: '/img/574.jpg'
   },
   {
     id: 6,
@@ -53,7 +56,7 @@ const calzadoDeportivo = [
     descripcion: 'Zapatillas para corredores exigentes.',
     marca: 'Asics',
     precio: 130,
-    imagen: 'https://ejemplo.com/gelkayano.jpg'
+    imagen: '/img/gelkayano.jpg'
   },
   {
     id: 7,
@@ -61,7 +64,7 @@ const calzadoDeportivo = [
     descripcion: 'Tecnología HOVR para máxima amortiguación.',
     marca: 'Under Armour',
     precio: 125,
-    imagen: 'https://ejemplo.com/hovr.jpg'
+    imagen: '/img/hovr.jpg'
   },
   {
     id: 8,
@@ -69,7 +72,7 @@ const calzadoDeportivo = [
     descripcion: 'Ligereza y flexibilidad para entrenamientos.',
     marca: 'Nike',
     precio: 80,
-    imagen: 'https://ejemplo.com/revolution.jpg'
+    imagen: '/img/revolution.jpg'
   },
   {
     id: 9,
@@ -77,7 +80,7 @@ const calzadoDeportivo = [
     descripcion: 'Estilo urbano y comodidad premium.',
     marca: 'Adidas',
     precio: 150,
-    imagen: 'https://ejemplo.com/nmd.jpg'
+    imagen: '/img/nmd.jpg'
   },
   {
     id: 10,
@@ -85,7 +88,7 @@ const calzadoDeportivo = [
     descripcion: 'Clásico atemporal para cualquier ocasión.',
     marca: 'Puma',
     precio: 90,
-    imagen: 'https://ejemplo.com/suede.jpg'
+    imagen: '/img/suede.jpg'
   },
   {
     id: 11,
@@ -93,7 +96,7 @@ const calzadoDeportivo = [
     descripcion: 'Diseño innovador y energía en cada paso.',
     marca: 'Reebok',
     precio: 115,
-    imagen: 'https://ejemplo.com/zigkinetica.jpg'
+    imagen: '/img/zigkinetica.jpg'
   },
   {
     id: 12,
@@ -101,7 +104,7 @@ const calzadoDeportivo = [
     descripcion: 'Amortiguación superior para largas distancias.',
     marca: 'New Balance',
     precio: 135,
-    imagen: 'https://ejemplo.com/freshfoam.jpg'
+    imagen: '/img/freshfoam.jpg'
   },
   {
     id: 13,
@@ -109,7 +112,7 @@ const calzadoDeportivo = [
     descripcion: 'Estabilidad y soporte para corredores.',
     marca: 'Asics',
     precio: 120,
-    imagen: 'https://ejemplo.com/gt2000.jpg'
+    imagen: '/img/gt2000.jpg'
   },
   {
     id: 14,
@@ -117,7 +120,7 @@ const calzadoDeportivo = [
     descripcion: 'Rendimiento y comodidad en cada entrenamiento.',
     marca: 'Under Armour',
     precio: 100,
-    imagen: 'https://ejemplo.com/charged.jpg'
+    imagen: '/img/charged.jpg'
   },
   {
     id: 15,
@@ -125,7 +128,7 @@ const calzadoDeportivo = [
     descripcion: 'Versatilidad y respuesta rápida.',
     marca: 'Nike',
     precio: 125,
-    imagen: 'https://ejemplo.com/pegasus.jpg'
+    imagen: '/img/pegasus.jpg'
   },
   {
     id: 16,
@@ -133,7 +136,7 @@ const calzadoDeportivo = [
     descripcion: 'Comodidad y soporte para largas distancias.',
     marca: 'Adidas',
     precio: 130,
-    imagen: 'https://ejemplo.com/supernova.jpg'
+    imagen: '/img/supernova.jpg'
   },
   {
     id: 17,
@@ -141,7 +144,7 @@ const calzadoDeportivo = [
     descripcion: 'Estilo retro y tecnología moderna.',
     marca: 'Puma',
     precio: 95,
-    imagen: 'https://ejemplo.com/futurerider.jpg'
+    imagen: '/img/futurerider.jpg'
   },
   {
     id: 18,
@@ -149,7 +152,7 @@ const calzadoDeportivo = [
     descripcion: 'Zapatillas para entrenamiento funcional.',
     marca: 'Reebok',
     precio: 110,
-    imagen: 'https://ejemplo.com/nano.jpg'
+    imagen: '/img/nano.jpg'
   },
   {
     id: 19,
@@ -157,7 +160,7 @@ const calzadoDeportivo = [
     descripcion: 'Diseño icónico y materiales premium.',
     marca: 'New Balance',
     precio: 140,
-    imagen: 'https://ejemplo.com/997.jpg'
+    imagen: '/img/997.jpg'
   },
   {
     id: 20,
@@ -165,7 +168,7 @@ const calzadoDeportivo = [
     descripcion: 'Máxima amortiguación para corredores.',
     marca: 'Asics',
     precio: 145,
-    imagen: 'https://ejemplo.com/gelnimbus.jpg'
+    imagen: '/img/gelnimbus.jpg'
   }
 ];
 
