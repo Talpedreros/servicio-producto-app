@@ -1,0 +1,48 @@
+# Dependencias
+# La carpeta node_modules es la más importante a ignorar
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Directorios de cobertura de tests
+coverage/
+.nyc_output/
+
+# Cachés
+.npm/
+.eslintcache
+.cache/
+.parcel-cache/
+.next/ # Para proyectos de Next.js
+.nuxt/ # Para proyectos de Nuxt.js
+dist/   # Carpeta de salida de builds
+
+# Variables de entorno
+# Archivos que contienen información sensible o de configuración local
+.env
+.env.test
+.env.local
+.env.development.local
+.env.staging.local
+.env.production.local
+
+# Archivos de empaquetado
+*.tgz
+
+# Historial de REPL
+.node_repl_history
+
+# Varios (específicos para herramientas o sistemas)
+# Visual Studio Code
+.vscode-test/
+
+# Yarn v2
+.yarn/cache
+.yarn/unplugged
+.pnp.*
